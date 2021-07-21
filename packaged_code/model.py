@@ -1,15 +1,7 @@
-import sys, traceback, os
-import re, math
-from sklearn.metrics import mean_squared_error
+import os
+
 import tensorflow as tf
-import numpy as np
-import tensorflow.contrib.slim as slim, time
-
-from tensorflow.python import debug as tf_debug
-
-import matplotlib.pyplot as plt
-
-from PIL import Image
+import tensorflow.contrib.slim as slim
 
 
 class EBSDIndexingModel:
@@ -245,4 +237,4 @@ class EBSDIndexingModel:
 
         save_path_ = os.path.join(self.save_dir, 'model.ckpt')
 
-        return eval_prediction, saver, save_path_
+        return eval_data, eval_prediction, saver, save_path_
