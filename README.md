@@ -16,3 +16,4 @@ Created two directories and copied the raw code files into this project.
 
 2021/7/21
 Tried to add the data sets but failed because of the size of the files. Add a README file to raw codes.
+A test code is created. Missing the model but the rest is fine.

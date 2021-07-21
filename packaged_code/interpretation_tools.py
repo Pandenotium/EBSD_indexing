@@ -18,7 +18,8 @@ def predict(image_input):
     :return: n vectors (needs to be proved) of length 6, the first 3 elements are phi1,
     psi, phi2 in degrees and the last 3 elements are pcx, pcy, pcz.
     '''
-    eval_data, eval_prediction, saver, save_path_ = model.initialize()
+    model_i = model()
+    eval_data, eval_prediction, saver, save_path_ = model_i.initialize()
 
     with tf.Session() as sess:
 
@@ -53,7 +54,8 @@ def feature_map(image_input, layer, filter, save=False, grey=True, format='png')
 
     :param format: string, indicates the format which you want to save the map
     '''
-    eval_data, eval_prediction, saver, save_path_ = model.initialize()
+    model_i = model()
+    eval_data, eval_prediction, saver, save_path_ = model_i.initialize()
 
     with tf.Session() as sess:
 
