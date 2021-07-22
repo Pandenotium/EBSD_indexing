@@ -1,7 +1,7 @@
-from interpretation_tools import predict
+from interpretation_tools import feature_map
 
 from read_h5 import imread
 
-image_input, ground_truth = imread("hignlin.h5", 0, 1)
+image_input, ground_truth = imread(0, 1, "highlin.h5")
 
-predict(image_input)
+feature_map(image_input, 1, 0, grey=False)
