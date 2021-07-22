@@ -20,4 +20,4 @@ A test code is created. Missing the model but the rest is fine.
 
 2021/7/22
 A README file is created with organized codes. Data are stored in a new
-directory.
+directory. Heatmaps are done.

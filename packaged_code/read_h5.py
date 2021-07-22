@@ -1,17 +1,27 @@
-# -*- coding: utf-8 -*-
-"""
-Created on Thu May  7 20:10:49 2020
-
-@author: Chapman Guan
-"""
-
 import h5py as h
 import numpy as np
 
-def test_read(begin,n):
+def imread(begin, n, file = "data.h5"):
+    '''
+    This function reads n EBSD patterns from the indicated file.
+
+    :param begin: integer, indicates from which image the function reads
+    the images. this parameter begins with 0.
+
+    :param n: integer, indicates how many images the function reads
+
+    :param file: string, indicates from which file the function reads
+    the images. this string should contain ".h5"
+
+    :return: im_result: the read n images in format np.array of the size
+    (n,60,60,1)
+
+    :return: y_result: true parameters (eul and pcs) of the read n images
+    in format np.array of the size (n,6)
+    '''
     im_result = np.zeros((n,60,60,1))
     y_result = np.zeros((n,6))
-    file = h.File("../data/highlin.h5","r")
+    file = h.File("../data/" + file,"r")
     for i in range(begin,begin+n):
         if i % 20 == 0:
             print('\r' + "Loading progress:%d/%d"%(i-begin,n),end = '',flush=True)
@@ -21,18 +31,5 @@ def test_read(begin,n):
         
         y = file['/lables'][i]
         y_result[i-begin] = y.reshape((6))
-        
-    return im_result, y_result 
-        
-def standard_read():
-    im_result = np.zeros((1,60,60,1))
-    y_result = np.zeros((1,6))
-    file = h.File("standard.h5","r")
-    im = file['/images'][0]
-    im_result[0] = im.reshape((60,60,1))
-    im_result = im_result/255
-        
-    y = file['/lables'][0]
-    y_result[0] = y.reshape((6))
         
     return im_result, y_result
