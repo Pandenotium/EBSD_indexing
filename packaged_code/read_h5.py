@@ -11,7 +11,7 @@ import numpy as np
 def test_read(begin,n):
     im_result = np.zeros((n,60,60,1))
     y_result = np.zeros((n,6))
-    file = h.File("highlin.h5","r")
+    file = h.File("../data/highlin.h5","r")
     for i in range(begin,begin+n):
         if i % 20 == 0:
             print('\r' + "Loading progress:%d/%d"%(i-begin,n),end = '',flush=True)
