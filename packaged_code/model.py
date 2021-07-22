@@ -16,19 +16,8 @@ class EBSDIndexingModel:
     stride = 1
 
     save_dir = os.getcwd()
-    # save_dir = './temp_200503201834/temp_200503201834'
-    # os.system('mkdir -p '+log_folder)
-
-    # save_dir = os.path.join(log_folder, logfile.split('.')[0])
-    # os.system('mkdir -p '+save_dir)
 
     conffile = None
-
-    # checkpoint_fn = os.path.join(log_folder,
-    #							 'checkpoint_'+logfile+'.h5')
-    # log_fn = os.path.join(log_folder, 'nn_'+logfile)
-    # pp_file = os.path.join(log_folder, 'pp_'+logfile)
-    # rr_file = os.path.join(log_folder, 'rr_'+logfile)
 
     if architecture == 'infile':
         architecture = [{'layer_type': 'conv', 'num_filters': 256, 'input_channels': 1, 'filter_size': filter_size,
@@ -79,7 +68,7 @@ class EBSDIndexingModel:
 
     SEED = 66478
 
-    def model_slim(self, data, train=True):
+    def model_slim(self, data, train=False):
         i = 0
         branch = False
         start_branch = False
@@ -226,8 +215,6 @@ class EBSDIndexingModel:
 
     def initialize(self):
         tf.compat.v1.reset_default_graph()
-
-        # global batch_size, learning_rate, architecture, num_epochs, IMAGE_SIZE
 
         eval_data = tf.placeholder(tf.float32, shape=(1, self.IMAGE_SIZE, self.IMAGE_SIZE, self.NUM_CHANNELS))
         print('building evaluation graph')
