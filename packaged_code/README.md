@@ -7,7 +7,8 @@ They are packaged and can run under simple calls of functions.
 
 `model.py` is the very key file that contains the definition of our CNN
 model and a corresponding function to load it. The other codes are all
-based on this file.
+based on this file. To use this file, model parameters are necessary.
+Please refer to the README file in directory `data`.
 
 `read_h5.py` contains the functions that load the EBSD patterns from the
 `.h5` files and transform them into proper formats that the codes can
@@ -25,5 +26,5 @@ masked feature maps, modified grad-cam, difference heat map, error test,
 feature maps of a whole layer (optional)
 
 ### other notations
-model parameters are not ready yet (too big to load), test data sets
+test data sets
 are not ready yet
