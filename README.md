@@ -5,6 +5,7 @@ This README file contributes to the paper: Indexation and calibration of EBSD by
 This project consists of these directories: 
 1. raw_code, which contains the unorganised codes of the project
 2. packaged_code, in which the codes are organised.
+3. data, which contains the test data sets and model parameters.
 
 ## Log
 
@@ -21,3 +22,7 @@ A test code is created. Missing the model but the rest is fine.
 2021/7/22
 A README file is created with organized codes. Data are stored in a new
 directory. Heatmaps are done.
+
+2021/08/03
+The modified Grad-CAM and masked feature map methods are prepared.
+Model parameters are ready. Interpretation tools are done.
